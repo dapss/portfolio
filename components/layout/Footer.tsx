@@ -15,7 +15,7 @@ export const Footer = () => {
             className="mb-4 md:mb-0"
           >
             <p className="text-gray-400">
-              © 2024 YourName. Made with <Heart className="inline text-red-500" size={16} /> using Next.js
+              © Mochamad Daffa.
             </p>
           </motion.div>
 
@@ -26,7 +26,7 @@ export const Footer = () => {
             className="flex gap-6"
           >
             <motion.a
-              href="https://github.com"
+              href="https://github.com/dapss"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 5 }}
@@ -35,7 +35,7 @@ export const Footer = () => {
               <Github size={20} />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/mochamaddaffa/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 5 }}
@@ -44,7 +44,7 @@ export const Footer = () => {
               <Linkedin size={20} />
             </motion.a>
             <motion.a
-              href="mailto:your.email@example.com"
+              href="mailto:mochamaddaffa05@gmail.com"
               whileHover={{ scale: 1.2, rotate: 5 }}
               className="text-gray-400 hover:text-accent transition-colors"
             >

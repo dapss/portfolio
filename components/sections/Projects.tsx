@@ -2,59 +2,63 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { ParallaxSection } from "@/components/common/ParallaxSection";
-import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A modern e-commerce solution with real-time inventory management, secure payment processing, and admin dashboard.",
-    tech: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-    image: "https://via.placeholder.com/600x400/1e293b/3b82f6?text=E-Commerce",
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Project Alpha",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+    tech: ["Next.js", "Stripe", "PostgreSQL"],
+    image: "https://placehold.co/800x600/1e293b/ffffff?text=800x600",
+    github: "#",
+    live: "#",
+    featured: true,
   },
   {
-    title: "AI Analytics Dashboard",
-    description: "Advanced analytics dashboard with machine learning insights, real-time data visualization, and predictive analytics.",
-    tech: ["React", "Python", "TensorFlow", "D3.js"],
-    image: "https://via.placeholder.com/600x400/1e293b/a855f7?text=AI+Dashboard",
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Project Beta",
+    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+    tech: ["React", "Python", "TensorFlow"],
+    image: "https://placehold.co/800x600/1e293b/ffffff?text=800x600",
+    github: "#",
+    live: "#",
+    featured: false,
   },
   {
-    title: "Social Media App",
-    description: "Real-time social platform with instant messaging, posts, stories, and interactive features.",
-    tech: ["Next.js", "Socket.io", "MongoDB", "Tailwind"],
-    image: "https://via.placeholder.com/600x400/1e293b/10b981?text=Social+App",
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Project Gamma",
+    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.",
+    tech: ["Next.js", "Socket.io", "MongoDB"],
+    image: "https://placehold.co/800x600/1e293b/ffffff?text=800x600",
+    github: "#",
+    live: "#",
+    featured: false,
   },
   {
-    title: "Task Management Tool",
-    description: "Collaborative project management tool with Kanban boards, team collaboration, and time tracking.",
-    tech: ["Vue.js", "Node.js", "Express", "MySQL"],
-    image: "https://via.placeholder.com/600x400/1e293b/f59e0b?text=Task+Manager",
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Project Delta",
+    description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.",
+    tech: ["Vue.js", "Node.js", "MySQL"],
+    image: "https://placehold.co/800x600/1e293b/ffffff?text=800x600",
+    github: "#",
+    live: "#",
+    featured: false,
   },
   {
-    title: "Video Streaming Platform",
-    description: "Scalable video streaming service with adaptive bitrate, live streaming, and content management.",
-    tech: ["React", "AWS", "FFmpeg", "Redis"],
-    image: "https://via.placeholder.com/600x400/1e293b/ef4444?text=Video+Stream",
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Project Epsilon",
+    description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.",
+    tech: ["React", "AWS", "FFmpeg"],
+    image: "https://placehold.co/800x600/1e293b/ffffff?text=800x600",
+    github: "#",
+    live: "#",
+    featured: false,
   },
   {
-    title: "Fitness Tracker App",
-    description: "Mobile-first fitness tracking app with workout plans, progress tracking, and social features.",
-    tech: ["React Native", "Firebase", "Redux", "Charts.js"],
-    image: "https://via.placeholder.com/600x400/1e293b/06b6d4?text=Fitness+Tracker",
-    github: "https://github.com",
-    live: "https://example.com",
+    title: "Project Zeta",
+    description: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+    tech: ["React Native", "Firebase"],
+    image: "https://placehold.co/800x600/1e293b/ffffff?text=800x600",
+    github: "#",
+    live: "#",
+    featured: false,
   },
 ];
 
@@ -65,7 +69,7 @@ export const Projects = () => {
   });
 
   return (
-    <section id="projects" className="py-20 bg-secondary">
+    <section id="projects" className="py-20 bg-primary">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -78,76 +82,82 @@ export const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Explore my latest work and creative solutions
+            A selection of my recent work
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <ParallaxSection key={index} speed={0.2}>
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className="relative overflow-hidden h-48 bg-gradient-to-br from-gray-800 to-gray-900">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="bg-accent text-primary px-3 py-1 rounded-full text-sm font-medium">
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group"
+            >
+              <div className="relative overflow-hidden rounded-2xl bg-secondary border border-gray-800 hover:border-accent/30 transition-all duration-300">
+                {/* Image Container */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  {project.featured && (
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-accent text-primary px-3 py-1 rounded-full text-xs font-medium">
                         Featured
                       </span>
                     </div>
-                  </div>
-                  
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-400 mb-4 line-clamp-2">
-                      {project.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 bg-primary text-accent text-xs rounded-full border border-accent/20"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <div className="flex gap-3">
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
-                        className="flex items-center gap-2 flex-1"
-                        href={project.github}
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                    {project.description}
+                  </p>
+
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 bg-primary/50 text-gray-300 text-xs rounded-md"
                       >
-                        <Github size={16} />
-                        Code
-                      </Button>
-                      <Button 
-                        variant="primary" 
-                        size="sm" 
-                        className="flex items-center gap-2 flex-1"
-                        href={project.live}
-                      >
-                        <ExternalLink size={16} />
-                        Live
-                      </Button>
-                    </div>
+                        {tech}
+                      </span>
+                    ))}
                   </div>
-                </Card>
-              </motion.div>
-            </ParallaxSection>
+
+                  {/* Links */}
+                  <div className="flex gap-3">
+                    <motion.a
+                      href={project.github}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-primary/50 border border-gray-700 rounded-lg text-gray-300 hover:text-accent hover:border-accent/30 transition-all duration-300"
+                    >
+                      <Github size={16} />
+                      Code
+                    </motion.a>
+                    <motion.a
+                      href={project.live}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-accent text-primary rounded-lg hover:bg-blue-600 transition-all duration-300"
+                    >
+                      <ExternalLink size={16} />
+                      Live
+                    </motion.a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
 
@@ -157,8 +167,9 @@ export const Projects = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-12"
         >
-          <Button variant="outline" size="lg" href="https://github.com">
-            View More on GitHub
+          <Button variant="outline" size="lg" className="group" href="https://github.com/dapss">
+            View All Projects
+            <ArrowUpRight className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={16} />
           </Button>
         </motion.div>
       </div>

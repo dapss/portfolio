@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/Button";
-import { Download, Code, Zap, Users } from "lucide-react";
+import { Download, ArrowRight, Sparkles, Target, Rocket } from "lucide-react";
 
 export const About = () => {
   const [ref, inView] = useInView({
@@ -11,15 +11,34 @@ export const About = () => {
     threshold: 0.1,
   });
 
-  const stats = [
-    { icon: Code, label: "Projects Completed", value: "50+" },
-    { icon: Users, label: "Happy Clients", value: "30+" },
-    { icon: Zap, label: "Years of Experience", value: "5+" },
+  const highlights = [
+    {
+      icon: Sparkles,
+      title: "Creative Problem Solver",
+      description: "Turning complex challenges into elegant solutions",
+    },
+    {
+      icon: Target,
+      title: "Detail-Oriented",
+      description: "Pixel-perfect implementation with clean code",
+    },
+    {
+      icon: Rocket,
+      title: "Fast Learner",
+      description: "Quickly adapting to new technologies and frameworks",
+    },
   ];
 
   return (
-    <section id="about" className="py-20 bg-secondary">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-20 bg-secondary relative overflow-hidden">
+      {/* Background Pattern */}
+      {/* <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 w-32 h-32 border-2 border-accent rounded-full"></div>
+        <div className="absolute bottom-10 right-10 w-48 h-48 border-2 border-accent rounded-full"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 border-2 border-accent rounded-full"></div>
+      </div> */}
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -31,108 +50,104 @@ export const About = () => {
             About Me
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Passionate developer with a love for creating amazing web experiences
+            Passionate about creating exceptional digital experiences
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-primary rounded-2xl p-8 md:p-12 shadow-xl border border-gray-800"
-          >
-            <div className="text-center mb-8">
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={inView ? { scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.3, type: "spring" }}
-                className="inline-block"
-              >
-                <div className="w-24 h-24 bg-gradient-to-r from-accent to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-4xl font-bold text-primary">YN</span>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-3xl font-bold text-text mb-4">
+                    Hi, I'm a Front-end Developer
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    With over 4 years of experience, I specialize in building
+                    scalable web applications that deliver exceptional user
+                    experiences. My journey in tech has been driven by curiosity
+                    and a passion for solving real-world problems.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    I believe in writing clean, maintainable code and staying
+                    up-to-date with the latest industry trends. When I'm not
+                    coding, you'll find me exploring new frameworks,
+                    contributing to open-source, or sharing knowledge with the
+                    developer community.
+                  </p>
                 </div>
-              </motion.div>
-              
-              <h3 className="text-3xl font-bold text-text mb-4">
-                Building Digital Experiences
-              </h3>
-            </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="space-y-4 mb-8"
-            >
-              <p className="text-gray-300 leading-relaxed">
-                Hi! I'm a full-stack developer with 5+ years of experience building web applications. 
-                I specialize in React, Next.js, and Node.js, with a passion for creating intuitive, 
-                performant user interfaces that solve real-world problems.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                When I'm not coding, you can find me exploring new technologies, contributing to open-source, 
-                or sharing my knowledge through technical writing and mentoring aspiring developers.
-              </p>
-            </motion.div>
+                <div className="flex flex-wrap gap-3">
+                  {["React", "Next.js", "TypeScript", "Node.js", "Python"].map(
+                    (tech) => (
+                      <span
+                        key={tech}
+                        className="px-4 py-2 bg-primary/50 border border-gray-700 rounded-lg text-sm text-gray-300"
+                      >
+                        {tech}
+                      </span>
+                    )
+                  )}
+                </div>
 
-            {/* Skills Grid */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
-            >
-              <div className="bg-secondary rounded-lg p-4 text-center">
-                <h4 className="text-accent font-semibold mb-2">Frontend</h4>
-                <p className="text-gray-400 text-sm">React, Next.js, TS</p>
-              </div>
-              <div className="bg-secondary rounded-lg p-4 text-center">
-                <h4 className="text-accent font-semibold mb-2">Backend</h4>
-                <p className="text-gray-400 text-sm">Node.js, Python, SQL</p>
-              </div>
-              <div className="bg-secondary rounded-lg p-4 text-center">
-                <h4 className="text-accent font-semibold mb-2">Tools</h4>
-                <p className="text-gray-400 text-sm">Git, Docker, AWS</p>
-              </div>
-              <div className="bg-secondary rounded-lg p-4 text-center">
-                <h4 className="text-accent font-semibold mb-2">Design</h4>
-                <p className="text-gray-400 text-sm">Figma, Tailwind</p>
-              </div>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
-            >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-secondary rounded-lg p-6 text-center"
+                <Button
+                  variant="primary"
+                  className="group flex items-center gap-2"
                 >
-                  <stat.icon className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-text mb-1">{stat.value}</div>
-                  <div className="text-gray-400 text-sm">{stat.label}</div>
+                  Download CV
+                  <ArrowRight
+                    className="group-hover:translate-x-1 transition-transform"
+                    size={16}
+                  />
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Right Highlights */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="space-y-6"
+            >
+              {highlights.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{
+                    opacity: inView ? 1 : 0,
+                    y: inView ? 0 : 20,
+                    transition: { duration: 0.2, ease: "easeInOut" },
+                  }}
+                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                  whileHover={{
+                    x: 10,
+                    transition: { duration: 0.2, ease: "easeInOut" },
+                  }}
+                  className="bg-primary/30 backdrop-blur-sm rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all duration-300"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <item.icon className="text-accent" size={24} />
+                    </div>
+                    <div>
+                      <h4 className="text-text font-semibold mb-2">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-400 text-sm">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="text-center"
-            >
-              <Button variant="primary" className="flex items-center gap-2 mx-auto">
-                <Download size={16} />
-                Download CV
-              </Button>
-            </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

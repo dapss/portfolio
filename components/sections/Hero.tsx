@@ -1,13 +1,13 @@
 "use client";
 
-import { motion, Variants } from "framer-motion"; // 1. Import Variants
+import { motion, Variants } from "framer-motion";
 import { AnimatedText } from "@/components/common/AnimatedText";
 import { ParallaxSection } from "@/components/common/ParallaxSection";
 import { Button } from "@/components/ui/Button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 
 export const Hero = () => {
-  const containerVariants: Variants = { // Also good practice to type this one
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -18,7 +18,6 @@ export const Hero = () => {
     },
   };
 
-  // 2. Add the Variants type annotation here
   const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -26,7 +25,7 @@ export const Hero = () => {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut", // This will now be correctly typed
+        ease: "easeOut",
       },
     },
   };
@@ -52,12 +51,12 @@ export const Hero = () => {
           </motion.div>
           
           <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold text-text mb-6">
-            <AnimatedText text="John Doe" delay={0.5} />
+            <AnimatedText text="Mochamad Daffa" delay={0.5} />
           </motion.h1>
           
           <motion.div variants={itemVariants} className="mb-8">
             <AnimatedText 
-              text="Full Stack Developer & Creative Thinker" 
+              text="Frontend Developer & Creative Thinker" 
               className="text-2xl md:text-3xl text-gray-400"
               delay={0.8}
             />
@@ -72,17 +71,17 @@ export const Hero = () => {
           </motion.p>
           
           <motion.div variants={itemVariants} className="flex gap-4 justify-center mb-12">
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" href="#projects" className="w-48">
               View My Work
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" href="#" className="w-48">
               Download CV
             </Button>
           </motion.div>
           
           <motion.div variants={itemVariants} className="flex gap-6 justify-center">
             <motion.a
-              href="#"
+              href="https://github.com/dapss"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               className="text-gray-400 hover:text-accent transition-colors"
@@ -90,7 +89,7 @@ export const Hero = () => {
               <Github size={24} />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://linkedin.com/in/mochamaddaffa/"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               className="text-gray-400 hover:text-accent transition-colors"
@@ -98,7 +97,7 @@ export const Hero = () => {
               <Linkedin size={24} />
             </motion.a>
             <motion.a
-              href="#"
+              href="mailto:mochamaddaffa05@gmail.com"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               className="text-gray-400 hover:text-accent transition-colors"

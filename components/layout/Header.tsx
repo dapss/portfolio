@@ -41,7 +41,7 @@ export const Header = () => {
             className="text-2xl font-bold text-accent"
             whileHover={{ scale: 1.05 }}
           >
-            YourName
+            Portfolio
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -60,7 +60,7 @@ export const Header = () => {
 
           <div className="hidden md:flex items-center gap-4">
             <motion.a
-              href="https://github.com"
+              href="https://github.com/dapss"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
@@ -69,7 +69,7 @@ export const Header = () => {
               <Github size={20} />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/mochamaddaffa/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}

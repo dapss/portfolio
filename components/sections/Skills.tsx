@@ -3,34 +3,40 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
+import {
+  SiJavascript, SiTypescript, SiPython, SiHtml5, SiReact,
+  SiNextdotjs, SiNodedotjs, SiExpress, SiTailwindcss, SiGit,
+  SiDocker, SiAmazon, SiUnity, SiFigma, SiPostgresql,
+  SiMongodb, SiRedis, SiFirebase
+} from "react-icons/si";
+import { FaDatabase } from "react-icons/fa";
 
 const skillsData = {
   languages: [
-    { name: "JavaScript", icon: "JS", level: "Expert" },
-    { name: "TypeScript", icon: "TS", level: "Advanced" },
-    { name: "Python", icon: "PY", level: "Advanced" },
-    { name: "HTML/CSS", icon: "🎨", level: "Expert" },
-    { name: "SQL", icon: "DB", level: "Intermediate" },
+    { name: "JavaScript", icon: SiJavascript },
+    { name: "TypeScript", icon: SiTypescript },
+    { name: "Python", icon: SiPython },
+    { name: "HTML/CSS", icon: SiHtml5 },
+    { name: "SQL", icon: FaDatabase },
   ],
   frameworks: [
-    { name: "React", icon: "⚛️", level: "Expert" },
-    { name: "Next.js", icon: "▲", level: "Advanced" },
-    { name: "Node.js", icon: "N", level: "Advanced" },
-    { name: "Express", icon: "E", level: "Intermediate" },
-    { name: "Tailwind", icon: "🌊", level: "Expert" },
+    { name: "React", icon: SiReact },
+    { name: "Next.js", icon: SiNextdotjs },
+    { name: "Node.js", icon: SiNodedotjs },
+    { name: "Express", icon: SiExpress },
+    { name: "Tailwind CSS", icon: SiTailwindcss },
   ],
   tools: [
-    { name: "Git", icon: "📦", level: "Advanced" },
-    { name: "Docker", icon: "🐳", level: "Intermediate" },
-    { name: "AWS", icon: "☁️", level: "Intermediate" },
-    { name: "Unity", icon: "🎮", level: "Beginner" },
-    { name: "Figma", icon: "🎨", level: "Advanced" },
+    { name: "Git", icon: SiGit },
+    { name: "Docker", icon: SiDocker },
+    // { name: "AWS", icon: SiAmazon },
+    { name: "Unity", icon: SiUnity },
+    { name: "Figma", icon: SiFigma },
   ],
   databases: [
-    { name: "PostgreSQL", icon: "🐘", level: "Advanced" },
-    { name: "MongoDB", icon: "🍃", level: "Intermediate" },
-    { name: "Redis", icon: "🔴", level: "Intermediate" },
-    { name: "Firebase", icon: "🔥", level: "Advanced" },
+    { name: "PostgreSQL", icon: SiPostgresql },
+    { name: "MongoDB", icon: SiMongodb },
+    { name: "Firebase", icon: SiFirebase },
   ],
 };
 
@@ -96,40 +102,34 @@ export const Skills = () => {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto"
         >
-          {skillsData[selectedCategory as keyof typeof skillsData].map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ 
-                duration: 0.5, 
-                delay: index * 0.05 + 0.5,
-                type: "spring",
-                stiffness: 100
-              }}
-              whileHover={{ 
-                scale: 1.1, 
-                rotate: [0, -5, 5, 0],
-                transition: { duration: 0.3 }
-              }}
-              className="bg-secondary rounded-xl p-6 text-center border border-gray-800 hover:border-accent/50 transition-all duration-300 cursor-pointer group"
-            >
-              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
-                {skill.icon}
-              </div>
-              <h3 className="text-text font-semibold mb-2">{skill.name}</h3>
-              <span className={`inline-block px-3 py-1 rounded-full text-xs ${
-                skill.level === "Expert" ? "bg-green-500/20 text-green-400" :
-                skill.level === "Advanced" ? "bg-blue-500/20 text-blue-400" :
-                skill.level === "Intermediate" ? "bg-yellow-500/20 text-yellow-400" :
-                "bg-gray-500/20 text-gray-400"
-              }`}>
-                {skill.level}
-              </span>
-            </motion.div>
-          ))}
+          {skillsData[selectedCategory as keyof typeof skillsData].map((skill, index) => {
+            const IconComponent = skill.icon;
+            return (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: index * 0.05 + 0.5,
+                  type: "spring",
+                  stiffness: 100
+                }}
+                whileHover={{ 
+                  scale: 1.1, 
+                  rotate: [0, -5, 5, 0],
+                  transition: { duration: 0.3 }
+                }}
+                className="bg-secondary rounded-xl p-6 text-center border border-gray-800 hover:border-accent/50 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-center gap-3"
+              >
+                {/* Render the icon component */}
+                <IconComponent className="text-4xl text-gray-400 group-hover:text-accent transition-colors duration-300" />
+                <h3 className="text-text font-semibold">{skill.name}</h3>
+              </motion.div>
+            )
+          })}
         </motion.div>
 
         {/* Additional Info */}
@@ -141,7 +141,6 @@ export const Skills = () => {
         >
           <p className="text-gray-400">
             Always learning and exploring new technologies. 
-            <span className="text-accent"> Currently diving into Web3 and AI! 🚀</span>
           </p>
         </motion.div>
       </div>
