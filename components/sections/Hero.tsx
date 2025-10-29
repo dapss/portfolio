@@ -74,7 +74,7 @@ export const Hero = () => {
             <Button variant="primary" size="lg" href="#projects" className="w-48">
               View My Work
             </Button>
-            <Button variant="outline" size="lg" href="#" className="w-48">
+            <Button variant="outline" size="lg" href="https://dapss.github.io/resume/Resume.pdf" className="w-48">
               Download CV
             </Button>
           </motion.div>

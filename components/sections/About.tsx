@@ -99,7 +99,7 @@ export const About = () => {
                   variant="primary"
                   className="group flex items-center gap-2"
                 >
-                  Download CV
+                  <a href="https://dapss.github.io/resume/Resume.pdf">Download CV</a>
                   <ArrowRight
                     className="group-hover:translate-x-1 transition-transform"
                     size={16}
