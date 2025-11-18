@@ -65,7 +65,7 @@ export const About = () => {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-3xl font-bold text-text mb-4">
-                    Hi, I'm a Front-end Developer
+                    Hi, I'm a Software Engineer
                   </h3>
                   <p className="text-gray-300 leading-relaxed mb-4">
                     With over 4 years of experience, I specialize in building
