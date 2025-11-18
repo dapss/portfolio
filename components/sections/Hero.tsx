@@ -56,7 +56,7 @@ export const Hero = () => {
           
           <motion.div variants={itemVariants} className="mb-8">
             <AnimatedText 
-              text="Frontend Developer & Creative Thinker" 
+              text="Software Engineer & Creative Thinker" 
               className="text-2xl md:text-3xl text-gray-400"
               delay={0.8}
             />
