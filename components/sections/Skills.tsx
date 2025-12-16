@@ -17,7 +17,7 @@ const skillsData = {
     { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
     { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
     { name: "PHP", icon: SiPhp, color: "#777BB4" },
-    { name: "Java", icon: FaJava, color: "#ED8B00" }, // Added Java
+    { name: "Java", icon: FaJava, color: "#ED8B00" },
     { name: "Python", icon: SiPython, color: "#3776AB" },
     { name: "HTML/CSS", icon: SiHtml5, color: "#E34F26" },
     { name: "SQL", icon: FaDatabase, color: "#4479A1" },
@@ -27,7 +27,7 @@ const skillsData = {
     { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
     { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
     { name: "Express", icon: SiExpress, color: "#ffffff" },
-    { name: "Laravel", icon: SiLaravel, color: "#FF2D20" }, // Restored Laravel
+    { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
     { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
   ],
   tools: [
@@ -68,7 +68,6 @@ export const Skills = () => {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">Explore my technical stack across different categories</p>
         </motion.div>
 
-        {/* --- CATEGORY BUTTONS (No Fluid Animation) --- */}
         <div className="flex flex-wrap justify-center gap-4 mb-16">
             {categories.map((category) => {
                 const isSelected = selectedCategory === category.id;
@@ -85,7 +84,6 @@ export const Skills = () => {
                             }
                         `}
                     >
-                        {/* Background Gradient (Simple Fade In, No Slide) */}
                         <AnimatePresence>
                             {isSelected && (
                                 <motion.div

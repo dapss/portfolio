@@ -37,10 +37,12 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           <motion.a
             href="#home"
-            className="cursor-target text-2xl font-bold text-accent"
+            className="cursor-target text-xl font-bold font-mono tracking-tighter flex items-center gap-1 group"
             whileHover={{ scale: 1.05 }}
           >
-            Portfolio
+            <span className="text-accent/50 group-hover:text-accent transition-colors">{'<'}</span>
+            <span className="text-gray-200 group-hover:text-white transition-colors">Daffa</span>
+            <span className="text-accent/50 group-hover:text-accent transition-colors">{'/>'}</span>
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -94,13 +96,13 @@ export const Header = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden mt-4 pb-4"
+            className="md:hidden mt-4 pb-4 bg-primary/95 backdrop-blur-md rounded-xl p-4 border border-white/10"
           >
             {navItems.map((item) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-gray-300 hover:text-accent transition-colors"
+                className="block py-3 text-gray-300 hover:text-accent transition-colors border-b border-white/5 last:border-0"
                 whileHover={{ x: 10 }}
                 onClick={() => setIsOpen(false)}
               >
