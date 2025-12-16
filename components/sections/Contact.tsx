@@ -138,7 +138,7 @@ export const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-primary/40 border border-gray-700/50 rounded-lg text-text placeholder-gray-500 focus:border-accent/50 focus:outline-none transition-colors backdrop-blur-sm"
+                  className="cursor-target w-full px-4 py-3 bg-primary/40 border border-gray-700/50 rounded-lg text-text placeholder-gray-500 focus:border-accent/50 focus:outline-none transition-colors backdrop-blur-sm"
                   placeholder="John Doe"
                 />
               </div>
@@ -151,7 +151,7 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-primary/40 border border-gray-700/50 rounded-lg text-text placeholder-gray-500 focus:border-accent/50 focus:outline-none transition-colors backdrop-blur-sm"
+                  className="cursor-target w-full px-4 py-3 bg-primary/40 border border-gray-700/50 rounded-lg text-text placeholder-gray-500 focus:border-accent/50 focus:outline-none transition-colors backdrop-blur-sm"
                   placeholder="john@example.com"
                 />
               </div>
@@ -164,7 +164,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-primary/40 border border-gray-700/50 rounded-lg text-text placeholder-gray-500 focus:border-accent/50 focus:outline-none transition-colors resize-none backdrop-blur-sm"
+                  className="cursor-target w-full px-4 py-3 bg-primary/40 border border-gray-700/50 rounded-lg text-text placeholder-gray-500 focus:border-accent/50 focus:outline-none transition-colors resize-none backdrop-blur-sm"
                   placeholder="Tell me about your project..."
                 />
               </div>
