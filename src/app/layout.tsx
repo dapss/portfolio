@@ -9,6 +9,7 @@ import AnimatedBackground from "@/components/common/AnimatedBackground";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export const metadata: Metadata = {
   title: "Mochamad Daffa - Portfolio",
   description: "Frontend Developer Portfolio",
