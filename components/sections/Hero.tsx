@@ -17,7 +17,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-transparent">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-transparent">
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="pointer-events-auto">
