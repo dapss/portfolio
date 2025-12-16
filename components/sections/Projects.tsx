@@ -24,7 +24,7 @@ const projects = [
   },
   {
     title: "Vocational HS Alumni Portal",
-    description: "Dedicated alumni portal for SMK Negeri 4 Bandung. Allows graduates to register, update profiles, and network.",
+    description: "Dedicated alumni portal for SMK Negeri 4 Bandung. Allows graduates to register, update profiles, and network for career opportunities.",
     tech: ["React.js", "JavaScript", "REST API"],
     image: "/images/projects/alumni-portal.png",
     github: "https://github.com/RaditZX/AlumnieFe",
