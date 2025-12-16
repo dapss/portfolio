@@ -73,7 +73,7 @@ export const About = () => {
                   animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                   whileHover={{ x: 10 }}
-                  className="cursor-target bg-primary/40 backdrop-blur-md rounded-xl p-6 border border-gray-700/50 hover:border-accent/30 transition-all duration-300"
+                  className="bg-primary/40 backdrop-blur-md rounded-xl p-6 border border-gray-700/50 hover:border-accent/30 transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">

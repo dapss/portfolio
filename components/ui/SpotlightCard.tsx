@@ -37,7 +37,7 @@ export default function SpotlightCard({
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`cursor-target relative rounded-2xl border border-white/10 bg-gray-950/70 backdrop-blur-md overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:border-white/20 ${className}`}
+      className={`relative rounded-2xl border border-white/10 bg-gray-950/70 backdrop-blur-md overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:border-white/20 ${className}`}
     >
       {/* The moving spotlight gradient */}
       <div
