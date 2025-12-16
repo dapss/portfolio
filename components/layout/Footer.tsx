@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -25,31 +25,23 @@ export const Footer = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex gap-6"
           >
-            <motion.a
-              href="https://github.com/dapss"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              className="text-gray-400 hover:text-accent transition-colors"
-            >
-              <Github size={20} />
-            </motion.a>
-            <motion.a
-              href="https://linkedin.com/in/mochamaddaffa/"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              className="text-gray-400 hover:text-accent transition-colors"
-            >
-              <Linkedin size={20} />
-            </motion.a>
-            <motion.a
-              href="mailto:mochamaddaffa05@gmail.com"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              className="text-gray-400 hover:text-accent transition-colors"
-            >
-              <Mail size={20} />
-            </motion.a>
+            {[
+              { href: "https://github.com/dapss", icon: Github },
+              { href: "https://linkedin.com/in/mochamaddaffa/", icon: Linkedin },
+              { href: "mailto:mochamaddaffa05@gmail.com", icon: Mail }
+            ].map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                // Added cursor-target here
+                className="cursor-target text-gray-400 hover:text-accent transition-colors"
+              >
+                <social.icon size={20} />
+              </motion.a>
+            ))}
           </motion.div>
         </div>
       </div>

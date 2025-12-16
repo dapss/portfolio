@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/Button";
 import { Github, Linkedin, Menu, X } from "lucide-react";
 
 export const Header = () => {
@@ -38,7 +37,7 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           <motion.a
             href="#home"
-            className="text-2xl font-bold text-accent"
+            className="cursor-target text-2xl font-bold text-accent"
             whileHover={{ scale: 1.05 }}
           >
             Portfolio
@@ -50,7 +49,7 @@ export const Header = () => {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-accent transition-colors"
+                className="cursor-target text-gray-300 hover:text-accent transition-colors"
                 whileHover={{ scale: 1.1 }}
               >
                 {item.name}
@@ -64,7 +63,7 @@ export const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
-              className="text-gray-400 hover:text-accent transition-colors"
+              className="cursor-target text-gray-400 hover:text-accent transition-colors"
             >
               <Github size={20} />
             </motion.a>
@@ -73,7 +72,7 @@ export const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
-              className="text-gray-400 hover:text-accent transition-colors"
+              className="cursor-target text-gray-400 hover:text-accent transition-colors"
             >
               <Linkedin size={20} />
             </motion.a>

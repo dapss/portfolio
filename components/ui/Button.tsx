@@ -20,11 +20,12 @@ export const Button = ({
   onClick,
   href,
 }: ButtonProps) => {
-  const baseStyles = "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200";
+  const baseStyles = "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300 cursor-none";
 
   const variants = {
-    primary: "bg-accent text-primary hover:bg-blue-600 shadow-lg hover:shadow-xl",
-    outline: "border-2 border-accent text-accent hover:bg-accent hover:text-primary",
+    primary: "bg-gradient-to-r from-blue-600 to-violet-600 text-white hover:from-blue-700 hover:to-violet-700 shadow-md hover:shadow-lg hover:shadow-blue-500/20",
+    
+    outline: "border-2 border-accent text-accent hover:bg-accent/10",
     ghost: "text-gray-400 hover:text-accent hover:bg-primary/50",
   };
 
@@ -40,12 +41,13 @@ export const Button = ({
     <Component
       href={href}
       onClick={onClick}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
       className={cn(
         baseStyles,
         variants[variant],
         sizes[size],
+        "cursor-target",
         className
       )}
     >
