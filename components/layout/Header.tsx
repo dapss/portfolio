@@ -40,9 +40,9 @@ export const Header = () => {
             className="cursor-target text-xl font-bold font-mono tracking-tighter flex items-center gap-1 group"
             whileHover={{ scale: 1.05 }}
           >
-            <span className="text-accent/50 group-hover:text-accent transition-colors">{'<'}</span>
-            <span className="text-gray-200 group-hover:text-white transition-colors">Daffa</span>
-            <span className="text-accent/50 group-hover:text-accent transition-colors">{'/>'}</span>
+            <span className="text-sky-500/50 group-hover:text-sky-400 transition-colors">{'<'}</span>
+            <span className="text-slate-200 group-hover:text-white transition-colors">Daffa</span>
+            <span className="text-sky-500/50 group-hover:text-sky-400 transition-colors">{'/>'}</span>
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -51,7 +51,7 @@ export const Header = () => {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="cursor-target text-gray-300 hover:text-accent transition-colors"
+                className="cursor-target text-slate-300 hover:text-sky-400 transition-colors font-medium"
                 whileHover={{ scale: 1.1 }}
               >
                 {item.name}
@@ -65,7 +65,7 @@ export const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
-              className="cursor-target text-gray-400 hover:text-accent transition-colors"
+              className="cursor-target text-slate-400 hover:text-sky-400 transition-colors"
             >
               <Github size={20} />
             </motion.a>
@@ -74,7 +74,7 @@ export const Header = () => {
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
-              className="cursor-target text-gray-400 hover:text-accent transition-colors"
+              className="cursor-target text-slate-400 hover:text-sky-400 transition-colors"
             >
               <Linkedin size={20} />
             </motion.a>
@@ -96,13 +96,13 @@ export const Header = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden mt-4 pb-4 bg-primary/95 backdrop-blur-md rounded-xl p-4 border border-white/10"
+            className="md:hidden mt-4 pb-4 bg-slate-900/95 backdrop-blur-md rounded-xl p-4 border border-slate-800"
           >
             {navItems.map((item) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="block py-3 text-gray-300 hover:text-accent transition-colors border-b border-white/5 last:border-0"
+                className="block py-3 text-slate-300 hover:text-sky-400 transition-colors border-b border-slate-800/50 last:border-0"
                 whileHover={{ x: 10 }}
                 onClick={() => setIsOpen(false)}
               >

@@ -55,7 +55,8 @@ export const Projects = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="projects" className="py-20 bg-black/20 backdrop-blur-sm border-t border-white/5">
+    // OPTIMIZATION: Removed bg-black/20 and backdrop-blur-sm from the section container
+    <section id="projects" className="py-20 bg-transparent border-t border-white/5">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -81,13 +82,15 @@ export const Projects = () => {
                   <img
                     src={getImagePath(project.image)}
                     alt={project.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => { e.currentTarget.src = `https://placehold.co/800x400/1e293b/ffffff?text=${encodeURIComponent(project.title)}`; }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   {project.featured && (
                     <div className="absolute top-4 left-4 z-10">
-                      <span className="bg-accent/90 text-primary px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm">Featured</span>
+                      <span className="bg-accent/90 text-primary px-3 py-1 rounded-full text-xs font-medium shadow-lg">Featured</span>
                     </div>
                   )}
                 </div>
@@ -118,7 +121,8 @@ export const Projects = () => {
         </div>
 
         <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.6, delay: 0.8 }} className="text-center mt-12">
-          <Button variant="outline" size="lg" className="group bg-primary/20 backdrop-blur-sm" href="https://github.com/dapss">
+          {/* OPTIMIZATION: Removed backdrop-blur-sm */}
+          <Button variant="outline" size="lg" className="group bg-primary/20" href="https://github.com/dapss">
             View All Projects
             <ArrowUpRight className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={16} />
           </Button>

@@ -44,10 +44,10 @@ const skillsData = {
 };
 
 const categories = [
-  { id: "languages", name: "Languages", color: "from-blue-600 to-cyan-500" },
-  { id: "frameworks", name: "Frameworks", color: "from-purple-600 to-pink-500" },
-  { id: "tools", name: "Tools", color: "from-green-600 to-emerald-500" },
-  { id: "databases", name: "Databases", color: "from-orange-600 to-red-500" },
+  { id: "languages", name: "Languages", color: "from-sky-500 to-blue-600" },
+  { id: "frameworks", name: "Frameworks", color: "from-violet-500 to-indigo-500" },
+  { id: "tools", name: "Tools", color: "from-emerald-400 to-teal-500" },
+  { id: "databases", name: "Databases", color: "from-orange-500 to-amber-500" },
 ];
 
 export const Skills = () => {
@@ -65,7 +65,7 @@ export const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-text mb-4">Technical Skills</h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">Explore my technical stack across different categories</p>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">Explore my technical stack across different categories</p>
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-16">
@@ -79,8 +79,8 @@ export const Skills = () => {
                             relative px-6 py-3 rounded-xl font-bold text-sm md:text-base transition-all duration-300
                             flex items-center gap-2 cursor-target border overflow-hidden
                             ${isSelected 
-                                ? `text-white border-transparent shadow-[0_0_20px_rgba(0,0,0,0.5)] transform scale-105` 
-                                : "bg-white/5 text-gray-400 border-white/10 hover:border-white/30 hover:bg-white/10 hover:text-gray-200"
+                                ? `text-white border-transparent shadow-[0_0_20px_rgba(14,165,233,0.3)] transform scale-105` 
+                                : "bg-slate-800/50 text-slate-400 border-slate-700 hover:border-sky-500/30 hover:bg-slate-800 hover:text-sky-200"
                             }
                         `}
                     >
@@ -95,73 +95,54 @@ export const Skills = () => {
                                 />
                             )}
                         </AnimatePresence>
-
-                        {/* Text Content */}
                         <span className="relative z-10">{category.name}</span>
-                        
-                        {/* Dot Indicator */}
-                        {isSelected && (
-                            <motion.span 
-                                initial={{ scale: 0, opacity: 0 }} 
-                                animate={{ scale: 1, opacity: 1 }}
-                                className="relative z-10 bg-white/20 p-1 rounded-full"
-                            >
-                                <div className="w-1.5 h-1.5 bg-white rounded-full" />
-                            </motion.span>
-                        )}
                     </button>
                 );
             })}
         </div>
 
-        {/* --- SKILL CARDS --- */}
-        <motion.div
-          layout
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto"
-        >
-          <AnimatePresence mode="popLayout">
-            {skillsData[selectedCategory as keyof typeof skillsData].map((skill, index) => {
-              const IconComponent = skill.icon;
-              return (
-                <motion.div
-                  key={skill.name}
-                  layout
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                >
-                  <SpotlightCard
-                    className="h-full min-h-[160px] group border-white/5 bg-white/5 hover:border-white/20 hover:bg-white/10"
-                  >
-                    {/* Centered Content Wrapper */}
-                    <div className="flex flex-col items-center justify-center gap-5 w-full h-full py-8 px-6">
-                        
-                        {/* Inner Colored Box */}
-                        <div 
-                            className="w-16 h-16 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-                            style={{ 
-                                backgroundColor: `${skill.color}20`,
-                                boxShadow: `0 0 0 1px ${skill.color}40`
-                            }}
-                        >
-                          <IconComponent 
-                            className="text-4xl transition-all duration-300 drop-shadow-lg" 
-                            style={{ color: skill.color }}
-                          />
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+          <AnimatePresence mode="wait">
+            <motion.div 
+                key={selectedCategory}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="contents" 
+            >
+                {skillsData[selectedCategory as keyof typeof skillsData].map((skill, index) => {
+                const IconComponent = skill.icon;
+                return (
+                    <div key={skill.name}>
+                    <SpotlightCard
+                        className="h-full min-h-[160px] group border-slate-800 bg-slate-900/80 hover:border-sky-500/30"
+                    >
+                        <div className="flex flex-col items-center justify-center gap-5 w-full h-full py-8 px-6">
+                            <div 
+                                className="w-16 h-16 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                                style={{ 
+                                    backgroundColor: `${skill.color}15`, 
+                                    boxShadow: `0 0 0 1px ${skill.color}30`
+                                }}
+                            >
+                            <IconComponent 
+                                className="text-4xl transition-colors duration-300 drop-shadow-lg" 
+                                style={{ color: skill.color }}
+                            />
+                            </div>
+                            
+                            <h3 className="text-slate-300 text-sm md:text-base font-medium tracking-wide group-hover:text-white transition-colors text-center">
+                                {skill.name}
+                            </h3>
                         </div>
-                        
-                        {/* Text */}
-                        <h3 className="text-gray-300 text-sm md:text-base font-medium tracking-wide group-hover:text-white transition-colors text-center">
-                            {skill.name}
-                        </h3>
+                    </SpotlightCard>
                     </div>
-                  </SpotlightCard>
-                </motion.div>
-              )
-            })}
+                )
+                })}
+            </motion.div>
           </AnimatePresence>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

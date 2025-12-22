@@ -23,10 +23,11 @@ export const Button = ({
   const baseStyles = "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-300 cursor-none";
 
   const variants = {
-    primary: "bg-gradient-to-r from-blue-600 to-violet-600 text-white hover:from-blue-700 hover:to-violet-700 shadow-md hover:shadow-lg hover:shadow-blue-500/20",
+    primary: "bg-gradient-to-r from-sky-500 to-blue-600 text-white hover:from-sky-400 hover:to-blue-500 shadow-md hover:shadow-lg hover:shadow-sky-500/25",
     
-    outline: "border-2 border-accent text-accent hover:bg-accent/10",
-    ghost: "text-gray-400 hover:text-accent hover:bg-primary/50",
+    outline: "border-2 border-sky-500/50 text-sky-400 hover:bg-sky-500/10 hover:border-sky-400",
+    
+    ghost: "text-slate-400 hover:text-sky-400 hover:bg-slate-800/50",
   };
 
   const sizes = {

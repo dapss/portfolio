@@ -5,7 +5,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-primary border-t border-gray-800 py-8">
+    <footer className="bg-slate-900 border-t border-slate-800 py-8 relative z-10">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <motion.div
@@ -14,8 +14,8 @@ export const Footer = () => {
             transition={{ duration: 0.5 }}
             className="mb-4 md:mb-0"
           >
-            <p className="text-gray-400">
-              © Mochamad Daffa.
+            <p className="text-slate-400 text-sm">
+              © {new Date().getFullYear()} Mochamad Daffa. All rights reserved.
             </p>
           </motion.div>
 
@@ -36,8 +36,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, rotate: 5 }}
-                // Added cursor-target here
-                className="cursor-target text-gray-400 hover:text-accent transition-colors"
+                className="cursor-target text-slate-400 hover:text-sky-400 transition-colors"
               >
                 <social.icon size={20} />
               </motion.a>

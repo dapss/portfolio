@@ -42,7 +42,7 @@ export const Contact = () => {
   const contactInfo = [
     { icon: Mail, label: "Email", value: "mochamaddaffa05@gmail.com", href: "mailto:mochamaddaffa05@gmail.com" },
     { icon: Phone, label: "WhatsApp", value: "+62 (813) 9902-2005", href: "https://wa.me/6281399022005" },
-    { icon: MapPin, label: "Location", value: "Jakarta, Indonesia", href: "https://www.google.com/maps/place/Jakarta" },
+    { icon: MapPin, label: "Location", value: "Jakarta, Indonesia", href: "#" },
   ];
 
   const socialLinks = [
@@ -54,7 +54,6 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-transparent relative overflow-hidden">
-      
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           ref={ref}
@@ -63,8 +62,8 @@ export const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-text mb-4">Let's Connect</h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">Have a project in mind? I'd love to hear about it</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-4">Let's Connect</h2>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">Have a project in mind? I'd love to hear about it</p>
         </motion.div>
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
@@ -75,8 +74,8 @@ export const Contact = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-text mb-6">Get in Touch</h3>
-              <p className="text-gray-400 mb-8">I'm always interested in hearing about new projects and opportunities.</p>
+              <h3 className="text-2xl font-bold text-slate-100 mb-6">Get in Touch</h3>
+              <p className="text-slate-400 mb-8">I'm always interested in hearing about new projects and opportunities.</p>
             </div>
 
             <div className="space-y-6">
@@ -86,25 +85,25 @@ export const Contact = () => {
                   href={info.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cursor-target flex items-center gap-4 p-4 bg-primary/40 backdrop-blur-sm rounded-xl border border-gray-700/50 hover:border-accent/30 transition-all duration-300 group"
+                  className="cursor-target flex items-center gap-4 p-4 bg-slate-900/80 backdrop-blur-sm rounded-xl border border-slate-800 hover:border-sky-500/30 hover:shadow-lg hover:shadow-sky-500/5 transition-all duration-300 group"
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                   whileHover={{ x: 10 }}
                 >
-                  <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center group-hover:bg-accent/30 transition-colors">
-                    <info.icon className="text-accent" size={20} />
+                  <div className="w-12 h-12 bg-sky-500/10 rounded-lg flex items-center justify-center group-hover:bg-sky-500/20 transition-colors border border-sky-500/10">
+                    <info.icon className="text-sky-400" size={20} />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm">{info.label}</p>
-                    <p className="text-text font-medium">{info.value}</p>
+                    <p className="text-slate-400 text-sm">{info.label}</p>
+                    <p className="text-slate-200 font-medium">{info.value}</p>
                   </div>
                 </motion.a>
               ))}
             </div>
 
-            <div className="pt-8 border-t border-gray-800/50">
-              <p className="text-gray-400 mb-4">Connect on social media</p>
+            <div className="pt-8 border-t border-slate-800">
+              <p className="text-slate-400 mb-4">Connect on social media</p>
               <div className="flex gap-4">
                 {socialLinks.map((social) => (
                   <motion.a
@@ -114,7 +113,7 @@ export const Contact = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.95 }}
-                    className="cursor-target w-10 h-10 bg-primary/40 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-accent hover:border-accent/30 transition-all duration-300"
+                    className="cursor-target w-10 h-10 bg-slate-900/80 border border-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:text-sky-400 hover:border-sky-500/30 hover:shadow-sky-500/10 transition-all duration-300"
                   >
                     <social.icon size={20} />
                   </motion.a>
@@ -130,7 +129,7 @@ export const Contact = () => {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-text mb-2">Name</label>
+                <label htmlFor="name" className="block text-slate-300 mb-2 font-medium">Name</label>
                 <input
                   type="text"
                   id="name"
@@ -138,12 +137,12 @@ export const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="cursor-target w-full px-4 py-3 bg-primary/40 border border-gray-700/50 rounded-lg text-text placeholder-gray-500 focus:border-accent/50 focus:outline-none transition-colors backdrop-blur-sm"
+                  className="cursor-target w-full px-4 py-3 bg-slate-900/50 border border-slate-800 rounded-xl text-slate-100 placeholder-slate-500 focus:border-sky-500 focus:ring-1 focus:ring-sky-500/50 focus:bg-slate-900/80 focus:outline-none transition-all duration-300 backdrop-blur-sm"
                   placeholder="John Doe"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-text mb-2">Email</label>
+                <label htmlFor="email" className="block text-slate-300 mb-2 font-medium">Email</label>
                 <input
                   type="email"
                   id="email"
@@ -151,12 +150,12 @@ export const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="cursor-target w-full px-4 py-3 bg-primary/40 border border-gray-700/50 rounded-lg text-text placeholder-gray-500 focus:border-accent/50 focus:outline-none transition-colors backdrop-blur-sm"
+                  className="cursor-target w-full px-4 py-3 bg-slate-900/50 border border-slate-800 rounded-xl text-slate-100 placeholder-slate-500 focus:border-sky-500 focus:ring-1 focus:ring-sky-500/50 focus:bg-slate-900/80 focus:outline-none transition-all duration-300 backdrop-blur-sm"
                   placeholder="john@example.com"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-text mb-2">Message</label>
+                <label htmlFor="message" className="block text-slate-300 mb-2 font-medium">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -164,7 +163,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="cursor-target w-full px-4 py-3 bg-primary/40 border border-gray-700/50 rounded-lg text-text placeholder-gray-500 focus:border-accent/50 focus:outline-none transition-colors resize-none backdrop-blur-sm"
+                  className="cursor-target w-full px-4 py-3 bg-slate-900/50 border border-slate-800 rounded-xl text-slate-100 placeholder-slate-500 focus:border-sky-500 focus:ring-1 focus:ring-sky-500/50 focus:bg-slate-900/80 focus:outline-none transition-all duration-300 resize-none backdrop-blur-sm"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -174,7 +173,7 @@ export const Contact = () => {
                 disabled={isSubmitting || isSubmitted}
                 whileHover={{ scale: isSubmitting || isSubmitted ? 1 : 1.02 }}
                 whileTap={{ scale: isSubmitting || isSubmitted ? 1 : 0.98 }}
-                className="cursor-target w-full py-4 bg-accent text-primary rounded-lg font-medium hover:bg-blue-600 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="cursor-target w-full py-4 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-xl font-bold tracking-wide hover:from-sky-400 hover:to-blue-500 transition-all shadow-lg shadow-sky-900/20 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed border border-transparent hover:border-sky-400/50"
               >
                 {isSubmitted ? (
                   <> <CheckCircle size={20} /> Message Sent! </>

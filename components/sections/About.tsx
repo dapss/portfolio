@@ -15,7 +15,7 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-black/20 backdrop-blur-sm relative overflow-hidden border-t border-white/5">
+    <section id="about" className="py-20 bg-transparent relative overflow-hidden border-t border-slate-800/50">
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           ref={ref}
@@ -24,8 +24,8 @@ export const About = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-text mb-4">About Me</h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">Passionate about creating exceptional digital experiences</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-4">About Me</h2>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">Passionate about creating exceptional digital experiences</p>
         </motion.div>
 
         <div className="max-w-5xl mx-auto">
@@ -37,18 +37,18 @@ export const About = () => {
             >
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-3xl font-bold text-text mb-4">Hi, I'm a Software Engineer</h3>
-                  <p className="text-gray-300 leading-relaxed mb-4">
+                  <h3 className="text-3xl font-bold text-slate-100 mb-4">Hi, I'm a Software Engineer</h3>
+                  <p className="text-slate-300 leading-relaxed mb-4">
                     With over 4 years of experience, I specialize in building scalable web applications that deliver exceptional user experiences. My journey in tech has been driven by curiosity and a passion for solving real-world problems.
                   </p>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-slate-300 leading-relaxed">
                     I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends. When I'm not coding, you'll find me exploring new frameworks, contributing to open-source, or sharing knowledge with the developer community.
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-3">
                   {["React", "Next.js", "TypeScript", "Node.js", "Python"].map((tech) => (
-                    <span key={tech} className="px-4 py-2 bg-primary/40 border border-gray-700 rounded-lg text-sm text-gray-300 backdrop-blur-sm">
+                    <span key={tech} className="px-4 py-2 bg-slate-900/50 border border-slate-700 rounded-lg text-sm text-sky-300 shadow-sm">
                       {tech}
                     </span>
                   ))}
@@ -72,16 +72,17 @@ export const About = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  whileHover={{ x: 10 }}
-                  className="bg-primary/40 backdrop-blur-md rounded-xl p-6 border border-gray-700/50 hover:border-accent/30 transition-all duration-300"
+                  whileHover={{ x: 10, backgroundColor: "rgba(15, 23, 42, 0.9)" }}
+                  className="bg-slate-900/80 rounded-xl p-6 border border-slate-800 hover:border-sky-500/30 hover:shadow-lg hover:shadow-sky-500/5 transition-all duration-300 cursor-default"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <item.icon className="text-accent" size={24} />
+                    {/* Icon Box */}
+                    <div className="w-12 h-12 bg-sky-500/10 rounded-lg flex items-center justify-center flex-shrink-0 border border-sky-500/10">
+                      <item.icon className="text-sky-400" size={24} />
                     </div>
                     <div>
-                      <h4 className="text-text font-semibold mb-2">{item.title}</h4>
-                      <p className="text-gray-400 text-sm">{item.description}</p>
+                      <h4 className="text-slate-100 font-semibold mb-2">{item.title}</h4>
+                      <p className="text-slate-400 text-sm">{item.description}</p>
                     </div>
                   </div>
                 </motion.div>
